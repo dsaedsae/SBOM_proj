@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  dtrack-apiserver:
+    image: dependencytrack/bundled
+    container_name: dtrack-server
+    restart: unless-stopped
+    ports:
+      - "8080:8080" # 웹 접속 포트
+    environment:
+    # [중요] 16GB RAM 환경 최적화 (힙 메모리 최대 4GB 제한)
+      - JAVA_OPTIONS=-Xmx4g -Dalpine.http.proxy.port=0
+    volumes:
+      - "dtrack-data:/data" # 데이터 영구 저장
+
+volumes:
+  dtrack-data:
