@@ -1,0 +1,13 @@
+# 실행 파일 무시
+*.exe
+*.dll
+
+# OS 임시 파일 무시
+.DS_Store
+Thumbs.db
+
+# 로그 파일 무시
+*.log
+
+# 텍스트 에디터 설정 파일 무시
+.vscode/
